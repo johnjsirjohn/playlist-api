@@ -5,14 +5,14 @@ const Song = require('./model');
 const router = new Router();
 
 //Show all songs
-router.get('/song', (request, response, next) =>
+router.get('/playlist/song', (request, response, next) =>
   Song.findAll()
     .then(songs => response.send(songs))
     .catch(error => next(error))
 );
 
 //Add a song
-router.post('/song', (req, res, next) => {
+router.post('/playlist/:id/song', (req, res, next) => {
   let { title, artist, album } = req.body;
   Song.create(req.body)
     .then(song => {
@@ -25,7 +25,7 @@ router.post('/song', (req, res, next) => {
 });
 
 //Show a song by id
-router.get('/song/:id', (req, res, next) => {
+router.get('/playlist/song/:id', (req, res, next) => {
   const id = req.params.id;
   Song.findByPk(id)
     .then(song => {
