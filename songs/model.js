@@ -6,17 +6,18 @@ const Song = db.define(
   {
     title: {
       type: Sequelize.STRING,
-      field: 'song_title'
+      field: 'title'
     },
     artist: {
-      type: Sequelize.INTEGER,
-      field: 'artist_name'
+      type: Sequelize.STRING,
+      field: 'artist'
     },
     album: {
       type: Sequelize.STRING,
-      field: 'albums_title'
+      field: 'album'
     }
   },
+
   { tableName: 'songs' }
 );
 
