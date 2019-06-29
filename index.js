@@ -1,5 +1,6 @@
 const express = require('express');
 const db = require('./db');
+const song = require('./song/model');
 
 const app = express(); //this const is the api server
 
