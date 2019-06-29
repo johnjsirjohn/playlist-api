@@ -1,6 +1,6 @@
+const bodyParser = require('body-parser');
 const express = require('express');
 const db = require('./db');
-const bodyParser = require('body-parser');
 
 const song = require('./songs/model');
 const songRouter = require('./songs/router');
